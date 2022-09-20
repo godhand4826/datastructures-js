@@ -41,11 +41,8 @@ describe('quickSelect', () => {
 		${[1, 1, 1, 1, 9, 9, 9, 9, 9, 9, 9, 9, 5]} | ${7}  | ${9}
 		${[-1, 2, 0]}                              | ${2}  | ${2}
 		${[1]}                                     | ${0}  | ${1}
-	`(
-		'quickSelect($arr, $index) returns $expected',
-		({ arr, index, expected }) => {
-			expect(quickSelect(arr, index)).toBe(expected);
-		}
+	`('quickSelect($arr, $index) returns $expected', ({ arr, index, expected }) =>
+		expect(quickSelect(arr, index)).toBe(expected)
 	);
 
 	test('quickSelect with wrong range', () => {
