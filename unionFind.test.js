@@ -9,6 +9,16 @@ describe('unionFind', () => {
 		n1.union(n2);
 		expect(n1.find()).toBe(n2.find());
 	});
+	test('same root', () => {
+		const n1 = new Node(1);
+		const n2 = new Node(2);
+		for (let i = 0; i < 10; i++) {
+			n1.union(n2);
+			n2.union(n1);
+		}
+		expect(n1.find()).toBe(n2.find());
+		expect(n1.find().level).toBe(1);
+	});
 	test('balance', () => {
 		const n1 = new Node(1);
 		const n2 = new Node(2);
@@ -26,5 +36,19 @@ describe('unionFind', () => {
 		n5.union(n7);
 		n1.union(n5);
 		expect(n1.find().level).toBe(3);
+	});
+	test('balance', () => {
+		const n1 = new Node();
+		const n2 = new Node();
+		const n3 = new Node();
+		n1.union(n2);
+		n1.union(n3);
+	});
+	test('balance', () => {
+		const n1 = new Node();
+		const n2 = new Node();
+		const n3 = new Node();
+		n1.union(n2);
+		n3.union(n1);
 	});
 });

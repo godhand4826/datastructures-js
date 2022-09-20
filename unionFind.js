@@ -27,7 +27,7 @@ class Node {
 			p1.level += 1;
 		} else if (p1.level > p2.level) {
 			p2.parent = p1;
-		} else if (p1.level < p2.level) {
+		} /* p1.level < p2.level */ else {
 			p1.parent = p2;
 		}
 	}
